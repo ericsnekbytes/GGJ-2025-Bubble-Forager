@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0c3nbgdrs6ny"]
+
+[ext_resource type="Script" path="res://levels/bubble_hunt.gd" id="1_vowq2"]
+[ext_resource type="PackedScene" uid="uid://dx4xntt240r4h" path="res://player/player.tscn" id="2_og0nc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y207u"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rw6wx"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3koro"]
+sky_top_color = Color(0.225905, 0.458421, 1, 1)
+sky_horizon_color = Color(0.565141, 0.709734, 1, 1)
+
+[sub_resource type="Sky" id="Sky_fowb8"]
+sky_material = SubResource("ProceduralSkyMaterial_3koro")
+
+[sub_resource type="Environment" id="Environment_mqe1t"]
+background_mode = 2
+sky = SubResource("Sky_fowb8")
+tonemap_mode = 2
+
+[node name="BubbleHunt" type="Node3D"]
+script = ExtResource("1_vowq2")
+
+[node name="Platform" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_y207u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_rw6wx")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_og0nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
+environment = SubResource("Environment_mqe1t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 5.16025, 0)
+shadow_enabled = true
