@@ -28,6 +28,9 @@ window/size/viewport_height=864
 [global_group]
 
 player=""
+scorable=""
+env=""
+item=""
 
 [input]
 

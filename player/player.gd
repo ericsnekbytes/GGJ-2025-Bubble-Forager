@@ -22,6 +22,12 @@ var jump_cooldown = 500
 var jump_strength = 2500
 var jump_vector = Vector3(0, jump_strength, 0)
 @onready var jump_timer = $JumpTimer
+# ....
+@onready var active_weapon = $Camera3D/WeaponPivot/GunBubble.weapon_id
+@onready var weapons = {
+	$Camera3D/WeaponPivot/GunHairDryer.weapon_id: $Camera3D/WeaponPivot/GunHairDryer,
+	$Camera3D/WeaponPivot/GunBubble.weapon_id: $Camera3D/WeaponPivot/GunBubble,
+}
 
 
 func _unhandled_input(event):

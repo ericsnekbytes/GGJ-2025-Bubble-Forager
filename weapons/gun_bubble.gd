@@ -2,6 +2,7 @@ extends Node3D
 
 var start_process = false
 var owning_player = null
+var weapon_id = 'GUN_BUBBLE'
 # ....
 var bullet_scn = preload('res://weapons/bubble_bullet.tscn')
 @onready var bullet_pivot = $BulletPivot
@@ -20,6 +21,7 @@ func _input(event):
 		if event.is_pressed() and event.is_action('rtrigger'):
 			#print('Shoot')
 			var bullet = bullet_scn.instantiate()
+			bullet.start_process = true
 			bullet_pivot.add_child(bullet)
 			bullet.global_basis = pcam.global_basis
 			bullet.global_position = pcam.global_position + pcam.global_basis.z.rotated(pcam.global_basis.y.normalized(), PI) * 3

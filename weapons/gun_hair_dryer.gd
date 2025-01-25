@@ -1,6 +1,7 @@
 extends Node3D
 
 var owning_player = null
+var weapon_id = 'GUN_HAIR_DRYER'
 
 
 # Called when the node enters the scene tree for the first time.

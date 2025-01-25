@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0c3nbgdrs6ny"]
+[gd_scene load_steps=12 format=3 uid="uid://d0c3nbgdrs6ny"]
 
 [ext_resource type="Script" path="res://levels/bubble_hunt.gd" id="1_vowq2"]
 [ext_resource type="PackedScene" uid="uid://po8pak3b3ajt" path="res://weapons/bubble_bullet.tscn" id="2_8ln2t"]
 [ext_resource type="PackedScene" uid="uid://dx4xntt240r4h" path="res://player/player.tscn" id="2_og0nc"]
+[ext_resource type="PackedScene" uid="uid://bg38cvtfcec88" path="res://entity/scorable_item.tscn" id="4_qjes3"]
+[ext_resource type="PackedScene" uid="uid://bncw6pdrxy5px" path="res://entity/ent_pyramid.tscn" id="5_lxvoh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y207u"]
 size = Vector3(10, 1, 10)
@@ -32,7 +34,7 @@ script = ExtResource("1_vowq2")
 
 [node name="Level" type="Node3D" parent="."]
 
-[node name="Platform" type="StaticBody3D" parent="Level"]
+[node name="Platform" type="StaticBody3D" parent="Level" groups=["env"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -42,7 +44,7 @@ shape = SubResource("BoxShape3D_y207u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_rw6wx")
 
-[node name="Platform2" type="StaticBody3D" parent="Level"]
+[node name="Platform2" type="StaticBody3D" parent="Level" groups=["env"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform2"]
@@ -128,5 +130,35 @@ environment = SubResource("Environment_mqe1t")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 5.16025, 0)
 shadow_enabled = true
+
+[node name="ScorableItem" parent="." instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 0)
+
+[node name="EntPyramid" parent="ScorableItem" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem2" parent="." instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, -2.5)
+
+[node name="EntPyramid" parent="ScorableItem2" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem3" parent="." instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 2.5)
+
+[node name="EntPyramid" parent="ScorableItem3" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem4" parent="." instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0.5, 0)
+
+[node name="EntPyramid" parent="ScorableItem4" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem5" parent="." instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0.5, -2.5)
+
+[node name="EntPyramid" parent="ScorableItem5" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem6" parent="." instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0.5, 2.5)
+
+[node name="EntPyramid" parent="ScorableItem6" instance=ExtResource("5_lxvoh")]
 
 [connection signal="body_entered" from="Level/FallTrigger" to="." method="_on_fall_trigger_body_entered"]
