@@ -8,6 +8,14 @@ func _ready():
 		player.start_process = true
 
 
+func _on_fall_trigger_body_entered(body):
+	if body.is_in_group('player'):
+		print('AAA')
+		body.global_position = $Spawn.global_position
+		body.velocity = Vector3.ZERO
+		body.global_basis = body.start_basis
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	InputHandler.poll_for_devices()

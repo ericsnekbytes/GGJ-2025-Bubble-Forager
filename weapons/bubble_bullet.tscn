@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://po8pak3b3ajt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6qv8"]
+transparency = 1
+albedo_color = Color(0.611765, 0.643137, 1, 0.427451)
+roughness = 0.18
+
+[sub_resource type="SphereMesh" id="SphereMesh_0abv3"]
+
+[node name="BubbleBullet" type="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_n6qv8")
+mesh = SubResource("SphereMesh_0abv3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

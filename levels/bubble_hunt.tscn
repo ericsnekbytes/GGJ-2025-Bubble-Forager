@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0c3nbgdrs6ny"]
+[gd_scene load_steps=10 format=3 uid="uid://d0c3nbgdrs6ny"]
 
 [ext_resource type="Script" path="res://levels/bubble_hunt.gd" id="1_vowq2"]
+[ext_resource type="PackedScene" uid="uid://po8pak3b3ajt" path="res://weapons/bubble_bullet.tscn" id="2_8ln2t"]
 [ext_resource type="PackedScene" uid="uid://dx4xntt240r4h" path="res://player/player.tscn" id="2_og0nc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y207u"]
@@ -8,6 +9,9 @@ size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rw6wx"]
 size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73wxo"]
+size = Vector3(1000, 10, 1000)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3koro"]
 sky_top_color = Color(0.225905, 0.458421, 1, 1)
@@ -24,15 +28,83 @@ tonemap_mode = 2
 [node name="BubbleHunt" type="Node3D"]
 script = ExtResource("1_vowq2")
 
-[node name="Platform" type="StaticBody3D" parent="."]
+[node name="Spawn" type="Node3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Platform" type="StaticBody3D" parent="Level"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_y207u")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_rw6wx")
+
+[node name="Bubbles" type="Node3D" parent="Level"]
+
+[node name="BubbleBullet" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 2.5, -6.5)
+
+[node name="BubbleBullet2" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.24519e-07, 2.5, -6.5)
+
+[node name="BubbleBullet3" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 2.5, -6.5)
+
+[node name="BubbleBullet16" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 2.5, -5)
+
+[node name="BubbleBullet17" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.58952e-07, 2.5, -5)
+
+[node name="BubbleBullet18" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 2.5, -5)
+
+[node name="BubbleBullet4" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 2.5, 6.5)
+
+[node name="BubbleBullet5" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.43729e-07, 2.5, 6.5)
+
+[node name="BubbleBullet6" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 2.5, 6.5)
+
+[node name="BubbleBullet13" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 2.5, 5)
+
+[node name="BubbleBullet14" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.78162e-07, 2.5, 5)
+
+[node name="BubbleBullet15" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 2.5, 5)
+
+[node name="BubbleBullet7" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.5, 2.5, -2)
+
+[node name="BubbleBullet8" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.5, 2.5, -3.77509e-07)
+
+[node name="BubbleBullet9" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.5, 2.5, 2)
+
+[node name="BubbleBullet10" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, 2)
+
+[node name="BubbleBullet11" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, 1.90739e-07)
+
+[node name="BubbleBullet12" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, -2)
+
+[node name="FallTrigger" type="Area3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/FallTrigger"]
+shape = SubResource("BoxShape3D_73wxo")
+metadata/_edit_lock_ = true
 
 [node name="Player1" parent="." instance=ExtResource("2_og0nc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -45,3 +117,5 @@ environment = SubResource("Environment_mqe1t")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 5.16025, 0)
 shadow_enabled = true
+
+[connection signal="body_entered" from="Level/FallTrigger" to="." method="_on_fall_trigger_body_entered"]

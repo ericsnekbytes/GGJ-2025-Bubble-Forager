@@ -28,6 +28,13 @@ func poll_for_devices():
 		find_and_assign_devices()
 
 
+func get_player_device(player_id):
+	if player_id in tracked_players:
+		return tracked_players[player_id]
+	else:
+		return null
+
+
 func find_and_assign_devices():
 	var all_devs = Input.get_connected_joypads()
 

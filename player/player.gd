@@ -4,6 +4,7 @@ var player_id = -1
 var start_process = false
 # ....
 @onready var player_cam = $Camera3D
+@onready var start_basis = global_basis
 # ....
 var MAX_THRUST = 300
 var GRAVITY_BASE = Vector3(0, -9.8, 0)
@@ -11,10 +12,24 @@ var MAX_SPEED = 54
 # ....
 var MAX_SPIN = PI
 var MAX_PITCH = PI
+# ....
+var last_jump_timestamp = 0
+var jump_cooldown = 500
+var jump_strength = 2000
+var jump_vector = Vector3(0, jump_strength, 0)
+@onready var jump_timer = $JumpTimer
 
 
 func _unhandled_input(event):
-	pass
+	var current_time = Time.get_ticks_msec()
+
+	var pdev = InputHandler.get_player_device(player_id)
+	if event.device == pdev:
+		if event.is_pressed() and event.is_action('jump'):
+			print('JUMP')
+			if current_time - last_jump_timestamp > jump_cooldown:
+				jump_timer.start()
+			last_jump_timestamp = current_time
 
 
 func _physics_process(delta):
@@ -62,15 +77,32 @@ func _physics_process(delta):
 		player_cam.rotate(player_cam.basis.x, look_pitch * delta)
 		player_cam.rotate(Vector3(0, 1, 0), look_spin * delta)
 
+		# Add inertia
+		#var drag_losses = .9
+		#var drag_fraction_instantaneous = 1 - (drag_losses * delta)
+		var inertia = start_velocity
+		#var vertical_motion = inertia.y
+		#var gravity_effect = .01
+		#var gravity_multiplier = 1 + (gravity_effect * delta)
+		#if vertical_motion < 0:
+			#gravity_multiplier = 1 / (gravity_effect * delta)
+		#vertical_motion *= gravity_multiplier
+		#inertia.y = vertical_motion
+		
+		var jump_instantaneous = Vector3.ZERO
+		if not jump_timer.is_stopped():
+			jump_instantaneous = jump_vector * (jump_timer.time_left / jump_timer.wait_time)
+
 		# Sum up motion  # TODO
-		motion_vector = gravity_vec + (ground_motion * delta)
-		#motion_vector.y = (
-			#motion_vector.x,
-			#motion_vector.y * 1.01,
-			#motion_vector.x,
-		#)
+		motion_vector = gravity_vec + (delta * (ground_motion + jump_instantaneous))
 		if motion_vector.length() > MAX_SPEED:
 			motion_vector = motion_vector.normalized() * MAX_SPEED
+		# Add fake exponential gravity
+		var vertical_motion = motion_vector.y
+		if vertical_motion < 0:
+			vertical_motion *= 1 + (.01 * delta)
+		else:
+			vertical_motion *= 1 / (.01 * delta)
 
 		velocity = motion_vector
 
