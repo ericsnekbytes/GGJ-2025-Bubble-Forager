@@ -26,29 +26,29 @@ func _physics_process(delta):
 		print(player_commands)
 
 		var move_forward_back = Vector3.ZERO
-		if player_commands['move_yaxis'] != null:
-			move_forward_back = player_cam.basis.z.normalized() * MAX_THRUST * player_commands['move_yaxis']
-			print('FWDBK %s // %s' % [player_commands['move_yaxis'], move_forward_back])
+		var move_fwd_back_raw = player_commands['move_yaxis']
+		if move_fwd_back_raw != null and abs(move_fwd_back_raw) > .2:
+			move_forward_back = player_cam.basis.z.normalized() * MAX_THRUST * move_fwd_back_raw
+			print('FWDBK %s // %s' % [move_fwd_back_raw, move_forward_back])
 
 		var move_left_right = Vector3.ZERO
-		if player_commands['move_xaxis'] != null:
-			move_left_right = player_cam.basis.x.normalized() * MAX_THRUST * player_commands['move_xaxis']
-			print('HORZ %s // %s' % [player_commands['move_xaxis'], move_forward_back])
+		var move_left_right_raw = player_commands['move_xaxis']
+		if move_left_right_raw != null and abs(move_left_right_raw) > .2:
+			move_left_right = player_cam.basis.x.normalized() * MAX_THRUST * move_left_right_raw
+			print('HORZ %s // %s' % [move_left_right_raw, move_forward_back])
 
 		var look_spin = 0
 		var look_spin_raw = player_commands['look_xaxis']
-		if look_spin_raw != null:
+		if look_spin_raw != null and abs(look_spin_raw) > .2:
 			look_spin_raw *= -1
-			if abs(look_spin_raw) > .2:
-				look_spin = look_spin_raw * MAX_SPIN
+			look_spin = look_spin_raw * MAX_SPIN
 			print('SPIN %s // %s' % [look_spin, look_spin_raw])
 
 		var look_pitch = 0
 		var look_pitch_raw = player_commands['look_yaxis']
-		if look_pitch_raw != null:
+		if look_pitch_raw != null and abs(look_pitch_raw) > .2:
 			look_pitch_raw *= -1
-			if abs(look_pitch_raw) > .2:
-				look_pitch = look_pitch_raw * MAX_PITCH
+			look_pitch = look_pitch_raw * MAX_PITCH
 			print('PITCH %s // %s' % [look_pitch, look_pitch_raw])
 
 		var ground_motion = move_left_right + move_forward_back
