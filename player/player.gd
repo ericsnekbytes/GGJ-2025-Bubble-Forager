@@ -33,7 +33,9 @@ var jump_vector = Vector3(0, jump_strength, 0)
 
 
 func _ready():
+	# Configure guns
 	gun_bubble.start_process = true
+	gun_hair_dryer.set_raycast_orientation(player_cam)
 
 
 func _unhandled_input(event):

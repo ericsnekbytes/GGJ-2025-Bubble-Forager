@@ -7,3 +7,7 @@
 script = ExtResource("1_h7sno")
 
 [node name="hair_dryer" parent="." instance=ExtResource("2_delt2")]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+visible = false
+target_position = Vector3(0, -1000, 0)
