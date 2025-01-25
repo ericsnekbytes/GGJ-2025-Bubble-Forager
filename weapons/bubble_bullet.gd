@@ -7,6 +7,7 @@ var start_process = false
 var MAX_SPEED = 10
 # ....
 var bubble_scn = preload("res://weapons/bubble_bullet.tscn")
+var triggered = false
 
 
 func _physics_process(delta):
@@ -19,6 +20,9 @@ func _physics_process(delta):
 					call_deferred('queue_free')
 				if collider.is_in_group('scorable'):
 					print('HIT ITEM')
-					collider.desired_motion = Vector3(0, .01, 0)
-					collider.add_child(bubble_scn.instantiate())
-					call_deferred('queue_free')
+					if not triggered:
+						collider.desired_motion = Vector3(0, .01, 0)
+						collider.add_child(bubble_scn.instantiate())
+						collider.trapped = true
+						call_deferred('queue_free')
+					triggered = true

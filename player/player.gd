@@ -36,6 +36,7 @@ func _ready():
 	# Configure guns
 	gun_bubble.start_process = true
 	gun_hair_dryer.set_raycast_orientation(player_cam)
+	gun_hair_dryer.raycast_exclude(self)
 
 
 func _unhandled_input(event):

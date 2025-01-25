@@ -5,6 +5,7 @@ var desired_motion = Vector3():
 		desired_motion = value
 		motion_timer.start()
 @onready var motion_timer = $Timer
+var trapped = false
 
 
 #func _ready():
