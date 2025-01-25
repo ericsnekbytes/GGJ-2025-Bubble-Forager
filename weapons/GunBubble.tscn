@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://2b6x255d3tch"]
+
+[ext_resource type="PackedScene" uid="uid://bbgrkgyetyt6l" path="res://art/bubble_gun.glb" id="1_cf478"]
+[ext_resource type="Script" path="res://weapons/gun_bubble.gd" id="1_pwyty"]
+
+[node name="GunBubble" type="Node3D"]
+script = ExtResource("1_pwyty")
+
+[node name="bubble_gun" parent="." instance=ExtResource("1_cf478")]
+
+[node name="BulletPivot" type="Node3D" parent="."]
+top_level = true

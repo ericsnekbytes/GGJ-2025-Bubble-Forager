@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c21xryfqr8owu"]
+
+[ext_resource type="Script" path="res://weapons/gun_hair_dryer.gd" id="1_h7sno"]
+[ext_resource type="PackedScene" uid="uid://rg5aclcl6dpo" path="res://art/hair_dryer.glb" id="2_delt2"]
+
+[node name="GunHairDryer" type="Node3D"]
+script = ExtResource("1_h7sno")
+
+[node name="hair_dryer" parent="." instance=ExtResource("2_delt2")]

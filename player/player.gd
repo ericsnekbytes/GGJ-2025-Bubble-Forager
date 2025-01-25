@@ -1,6 +1,10 @@
 extends CharacterBody3D
 
-var player_id = -1
+var player_id = -1:
+	set(value):
+		player_id = value
+		for gun in [$Camera3D/WeaponPivot/GunHairDryer, $Camera3D/WeaponPivot/GunBubble]:
+			gun.owning_player = self
 var start_process = false
 # ....
 @onready var player_cam = $Camera3D
@@ -38,33 +42,33 @@ func _physics_process(delta):
 		var motion_vector = Vector3.ZERO
 
 		var player_commands = InputHandler.get_command_dict(player_id)
-		print(player_commands)
+		#print(player_commands)
 
 		var move_forward_back = Vector3.ZERO
 		var move_fwd_back_raw = player_commands['move_yaxis']
 		if move_fwd_back_raw != null and abs(move_fwd_back_raw) > .2:
 			move_forward_back = player_cam.basis.z.normalized() * MAX_THRUST * move_fwd_back_raw
-			print('FWDBK %s // %s' % [move_fwd_back_raw, move_forward_back])
+			#print('FWDBK %s // %s' % [move_fwd_back_raw, move_forward_back])
 
 		var move_left_right = Vector3.ZERO
 		var move_left_right_raw = player_commands['move_xaxis']
 		if move_left_right_raw != null and abs(move_left_right_raw) > .2:
 			move_left_right = player_cam.basis.x.normalized() * MAX_THRUST * move_left_right_raw
-			print('HORZ %s // %s' % [move_left_right_raw, move_forward_back])
+			#print('HORZ %s // %s' % [move_left_right_raw, move_forward_back])
 
 		var look_spin = 0
 		var look_spin_raw = player_commands['look_xaxis']
 		if look_spin_raw != null and abs(look_spin_raw) > .2:
 			look_spin_raw *= -1
 			look_spin = look_spin_raw * MAX_SPIN
-			print('SPIN %s // %s' % [look_spin, look_spin_raw])
+			#print('SPIN %s // %s' % [look_spin, look_spin_raw])
 
 		var look_pitch = 0
 		var look_pitch_raw = player_commands['look_yaxis']
 		if look_pitch_raw != null and abs(look_pitch_raw) > .2:
 			look_pitch_raw *= -1
 			look_pitch = look_pitch_raw * MAX_PITCH
-			print('PITCH %s // %s' % [look_pitch, look_pitch_raw])
+			#print('PITCH %s // %s' % [look_pitch, look_pitch_raw])
 
 		var ground_motion = move_left_right + move_forward_back
 		if ground_motion.length() > MAX_THRUST:
