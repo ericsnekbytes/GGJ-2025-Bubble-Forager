@@ -23,11 +23,13 @@ var jump_strength = 2500
 var jump_vector = Vector3(0, jump_strength, 0)
 @onready var jump_timer = $JumpTimer
 # ....
-@onready var active_weapon = $Camera3D/WeaponPivot/GunBubble.weapon_id
-@onready var weapons = {
-	$Camera3D/WeaponPivot/GunHairDryer.weapon_id: $Camera3D/WeaponPivot/GunHairDryer,
-	$Camera3D/WeaponPivot/GunBubble.weapon_id: $Camera3D/WeaponPivot/GunBubble,
-}
+@onready var gun_hair_dryer = $Camera3D/WeaponPivot/GunHairDryer
+@onready var gun_bubble = $Camera3D/WeaponPivot/GunBubble
+#@onready var active_weapon = $Camera3D/WeaponPivot/GunBubble.weapon_id
+#@onready var weapons = {
+	#$Camera3D/WeaponPivot/GunHairDryer.weapon_id: $Camera3D/WeaponPivot/GunHairDryer,
+	#$Camera3D/WeaponPivot/GunBubble.weapon_id: $Camera3D/WeaponPivot/GunBubble,
+#}
 
 
 func _unhandled_input(event):
@@ -40,6 +42,19 @@ func _unhandled_input(event):
 			if current_time - last_jump_timestamp > jump_cooldown:
 				jump_timer.start()
 			last_jump_timestamp = current_time
+		if event.is_pressed() and event.is_action('swap_gun'):
+			if not gun_hair_dryer.visible:
+				gun_hair_dryer.show()
+				gun_hair_dryer.start_process = true
+
+				gun_bubble.start_process = false
+				gun_bubble.hide()
+			else:
+				gun_hair_dryer.hide()
+				gun_hair_dryer.start_process = false
+
+				gun_bubble.start_process = true
+				gun_bubble.show()
 
 
 func _physics_process(delta):

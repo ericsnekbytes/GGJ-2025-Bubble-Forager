@@ -30,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 transform = Transform3D(-0.537126, 0, 2.31346, 0, 2.375, 0, -2.31346, 0, -0.537126, 0.738559, -0.329864, -0.905614)
 
 [node name="GunHairDryer" parent="Camera3D/WeaponPivot" instance=ExtResource("2_6leki")]
+visible = false
 
 [node name="GunBubble" parent="Camera3D/WeaponPivot" instance=ExtResource("3_tbwkj")]
 
