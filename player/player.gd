@@ -60,7 +60,7 @@ func _physics_process(delta):
 
 		player_cam.transform = player_cam.transform.orthonormalized()
 		player_cam.rotate(player_cam.basis.x, look_pitch * delta)
-		player_cam.rotate(player_cam.basis.y, look_spin * delta)
+		player_cam.rotate(Vector3(0, 1, 0), look_spin * delta)
 
 		# Sum up motion  # TODO
 		motion_vector = gravity_vec + (ground_motion * delta)
