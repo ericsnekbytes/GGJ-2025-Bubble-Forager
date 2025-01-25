@@ -6,6 +6,7 @@ var start_process = false
 # ....
 @onready var raycast = $RayCast3D
 var firing = false
+var reverse_firing = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,13 @@ func _unhandled_input(event):
 				else:
 					#print('Stpo firing blow dryer')
 					firing = false
+			if event.is_action('ltrigger'):
+				if event.is_pressed():
+					#print('Firing blow dryer')
+					reverse_firing = true
+				else:
+					#print('Stpo firing blow dryer')
+					reverse_firing = false
 
 
 func set_raycast_orientation(node):
@@ -46,6 +54,9 @@ func _physics_process(delta):
 		#print('Raycast %s // %s // %s' % [current_time, target, firing])
 		if target:
 			#print('HAS tgt %s // %s' % [target, target.is_in_group('scorable')])
-			if firing and target.is_in_group('scorable') and target.trapped:
+			if target.is_in_group('scorable') and target.trapped:
 				#print('PUSH ITEM %s' % target)
-				target.desired_motion = (owning_player.global_position - target.global_position).normalized() * -.1
+				if firing:
+					target.desired_motion = (owning_player.global_position - target.global_position).normalized() * -.1
+				elif reverse_firing:
+					target.desired_motion = (owning_player.global_position - target.global_position).normalized() * .1
