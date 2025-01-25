@@ -32,6 +32,10 @@ var jump_vector = Vector3(0, jump_strength, 0)
 #}
 
 
+func _ready():
+	gun_bubble.start_process = true
+
+
 func _unhandled_input(event):
 	var current_time = Time.get_ticks_msec()
 

@@ -12,7 +12,6 @@ radius = 1.0
 height = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_64af6"]
-radius = 1.0
 
 [node name="BubbleBullet" type="CharacterBody3D"]
 collision_layer = 4
