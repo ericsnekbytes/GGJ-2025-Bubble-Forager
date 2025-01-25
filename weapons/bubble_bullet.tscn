@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://po8pak3b3ajt"]
+[gd_scene load_steps=5 format=3 uid="uid://po8pak3b3ajt"]
 
 [ext_resource type="Script" path="res://weapons/bubble_bullet.gd" id="1_v46ht"]
 
@@ -9,7 +9,11 @@ roughness = 0.18
 
 [sub_resource type="SphereMesh" id="SphereMesh_0abv3"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_64af6"]
+
 [node name="BubbleBullet" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_v46ht")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -18,3 +22,4 @@ mesh = SubResource("SphereMesh_0abv3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 top_level = true
+shape = SubResource("SphereShape3D_64af6")

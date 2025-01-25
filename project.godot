@@ -91,3 +91,4 @@ ltrigger={
 
 3d_physics/layer_1="environ"
 3d_physics/layer_2="player"
+3d_physics/layer_3="bullets"
