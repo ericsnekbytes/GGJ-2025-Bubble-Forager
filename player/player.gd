@@ -6,7 +6,7 @@ var start_process = false
 @onready var player_cam = $Camera3D
 @onready var start_basis = global_basis
 # ....
-var MAX_THRUST = 300
+var MAX_THRUST = 750
 var GRAVITY_BASE = Vector3(0, -9.8, 0)
 var MAX_SPEED = 54
 # ....
@@ -15,7 +15,7 @@ var MAX_PITCH = PI
 # ....
 var last_jump_timestamp = 0
 var jump_cooldown = 500
-var jump_strength = 2000
+var jump_strength = 2500
 var jump_vector = Vector3(0, jump_strength, 0)
 @onready var jump_timer = $JumpTimer
 
