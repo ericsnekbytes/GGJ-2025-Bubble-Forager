@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx4xntt240r4h"]
+[gd_scene load_steps=6 format=3 uid="uid://dx4xntt240r4h"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_3o8a5"]
+[ext_resource type="PackedScene" uid="uid://rg5aclcl6dpo" path="res://art/hair_dryer.glb" id="2_6u0ve"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mc6in"]
 
@@ -23,6 +24,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_p60yt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="WeaponPivot" type="Node3D" parent="Camera3D"]
+transform = Transform3D(-0.290263, 0, 2.3572, 0, 2.375, 0, -2.3572, 0, -0.290263, 0.738559, -0.329864, -0.905614)
+
+[node name="hair_dryer" parent="Camera3D/WeaponPivot" instance=ExtResource("2_6u0ve")]
 
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.5
