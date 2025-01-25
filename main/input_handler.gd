@@ -57,6 +57,27 @@ func find_and_assign_devices():
 				players_needing_devices.erase(pid)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	find_and_assign_devices()
+func get_command_dict(player_id):
+	var command_dict = {
+		'move_yaxis': null,
+		'move_xaxis': null,
+		'look_yaxis': null,
+		'look_xaxis': null,
+	}
+	var valid_commands = {
+		'move_yaxis': ['AXIS', JOY_AXIS_LEFT_Y],
+		'move_xaxis': ['AXIS', JOY_AXIS_LEFT_X],
+		'look_yaxis': ['AXIS', JOY_AXIS_RIGHT_Y],
+		'look_xaxis': ['AXIS', JOY_AXIS_RIGHT_X],
+	}
+	if player_id in tracked_players:
+		var player_device = tracked_players[player_id]
+		if player_device != null:
+			for command in valid_commands:
+				var command_type = valid_commands[command][0]
+				var command_code = valid_commands[command][1]
+
+				if command_type == 'AXIS':
+					command_dict[command] = Input.get_joy_axis(player_device, command_code)
+
+	return command_dict

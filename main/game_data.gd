@@ -14,11 +14,7 @@ func get_unique_id():
 	return unique_id
 
 
-func add_player():
-	player_id = get_unique_id()
+func initialize_player(node):
+	var player_id = get_unique_id()
+	node.player_id = player_id
 	InputHandler.add_player(player_id)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

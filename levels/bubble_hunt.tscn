@@ -34,7 +34,7 @@ shape = SubResource("BoxShape3D_y207u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_rw6wx")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_og0nc")]
+[node name="Player1" parent="." instance=ExtResource("2_og0nc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Env" type="Node3D" parent="."]

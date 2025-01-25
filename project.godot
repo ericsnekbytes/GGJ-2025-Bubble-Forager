@@ -18,11 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 InputHandler="*res://main/input_handler.gd"
+GameData="*res://main/game_data.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1536
+window/size/viewport_height=864
 
 [input]
 

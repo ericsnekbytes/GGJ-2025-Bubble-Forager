@@ -17,8 +17,9 @@ script = ExtResource("1_3o8a5")
 shape = SubResource("CapsuleShape3D_mc6in")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_fe43r")
 surface_material_override/0 = SubResource("StandardMaterial3D_p60yt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.543111)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
