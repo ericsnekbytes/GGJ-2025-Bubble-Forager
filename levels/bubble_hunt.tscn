@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0c3nbgdrs6ny"]
+[gd_scene load_steps=25 format=3 uid="uid://d0c3nbgdrs6ny"]
 
 [ext_resource type="Script" path="res://levels/bubble_hunt.gd" id="1_vowq2"]
 [ext_resource type="PackedScene" uid="uid://po8pak3b3ajt" path="res://weapons/bubble_bullet.tscn" id="2_8ln2t"]
@@ -16,12 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://c77irih680woy" path="res://art/Shrub1.glb" id="10_3ikap"]
 [ext_resource type="PackedScene" uid="uid://bnkj6hsstj3mx" path="res://environment/Island5x.tscn" id="11_sbex2"]
 [ext_resource type="PackedScene" uid="uid://28gqtmda8vfg" path="res://art/PalmTreeSmall.glb" id="13_uo227"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y207u"]
-size = Vector3(10, 1, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_rw6wx"]
-size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_73wxo"]
 size = Vector3(1000, 10, 1000)
@@ -75,7 +69,7 @@ size = Vector2i(766, 864)
 render_target_update_mode = 4
 
 [node name="Player1" parent="HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_og0nc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 1.5, 0)
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -89,27 +83,30 @@ size = Vector2i(766, 864)
 render_target_update_mode = 4
 
 [node name="Player2" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("2_og0nc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.5, 0)
 
 [node name="SpawnPoints" type="Node3D" parent="."]
 
 [node name="Spawn" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 1.5, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32, 1.5, 0)
 
 [node name="Spawn2" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 1.5, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -32, 1.5, 0)
 
 [node name="Level" type="Node3D" parent="."]
 
 [node name="Platforms" type="Node3D" parent="Level"]
 
 [node name="Island10x" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -6.16135, 0, 22.2106)
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 25.3387, 0, 22.2106)
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
 
 [node name="RockLarge12" parent="Level/Platforms/Island10x" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockLarge13" parent="Level/Platforms/Island10x" instance=ExtResource("7_q278r")]
 transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
 
 [node name="RockSmall12" parent="Level/Platforms/Island10x" instance=ExtResource("8_bjh80")]
@@ -130,8 +127,92 @@ transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825
 [node name="RockSmall13" parent="Level/Platforms/Island10x" instance=ExtResource("8_bjh80")]
 transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
 
+[node name="Island10x8" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(0.281286, 0, 0.959624, 0, 1, 0, -0.959624, 0, 0.281286, -23.6613, 0, 22.2106)
+
+[node name="PalmTree2" parent="Level/Platforms/Island10x8" instance=ExtResource("6_61bw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
+
+[node name="RockLarge12" parent="Level/Platforms/Island10x8" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockLarge13" parent="Level/Platforms/Island10x8" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockSmall12" parent="Level/Platforms/Island10x8" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.93347, -0.13157, -2.34524)
+
+[node name="RockMid12" parent="Level/Platforms/Island10x8" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.982852, -0.184397, -3.36146e-09, 0.18405, 0.980999, -0.0613795, 0.0113182, 0.060327, 0.998114, -1.84615, 0.124935, 2.77767)
+
+[node name="RockMid13" parent="Level/Platforms/Island10x8" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.485308, -0.184397, -0.854678, -0.04205, 0.971454, -0.233469, 0.873332, 0.149243, 0.4637, -2.54835, -0.00971796, 2.76851)
+
+[node name="Shrub12" parent="Level/Platforms/Island10x8" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Shrub13" parent="Level/Platforms/Island10x8" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825, -3.49811, -0.423454, -1.85267)
+
+[node name="RockSmall13" parent="Level/Platforms/Island10x8" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
+
+[node name="Island10x3" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(0.0445436, 0, 0.999008, 0, 1, 0, -0.999008, 0, 0.0445436, 24.3387, 0, -21.7894)
+
+[node name="PalmTree2" parent="Level/Platforms/Island10x3" instance=ExtResource("6_61bw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
+
+[node name="RockLarge12" parent="Level/Platforms/Island10x3" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockSmall12" parent="Level/Platforms/Island10x3" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.93347, -0.13157, -2.34524)
+
+[node name="RockMid12" parent="Level/Platforms/Island10x3" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.982852, -0.184397, -3.36146e-09, 0.18405, 0.980999, -0.0613795, 0.0113182, 0.060327, 0.998114, -1.84615, 0.124935, 2.77767)
+
+[node name="RockMid13" parent="Level/Platforms/Island10x3" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.485308, -0.184397, -0.854678, -0.04205, 0.971454, -0.233469, 0.873332, 0.149243, 0.4637, -2.54835, -0.00971796, 2.76851)
+
+[node name="Shrub12" parent="Level/Platforms/Island10x3" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Shrub13" parent="Level/Platforms/Island10x3" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825, -3.49811, -0.423454, -1.85267)
+
+[node name="RockSmall13" parent="Level/Platforms/Island10x3" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
+
+[node name="Island10x5" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(-0.228045, 0, -0.973651, 0, 1, 0, 0.973651, 0, -0.228045, -22.6613, 0, -21.7894)
+
+[node name="PalmTree2" parent="Level/Platforms/Island10x5" instance=ExtResource("6_61bw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
+
+[node name="RockLarge12" parent="Level/Platforms/Island10x5" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockSmall12" parent="Level/Platforms/Island10x5" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.93347, -0.13157, -2.34524)
+
+[node name="RockMid12" parent="Level/Platforms/Island10x5" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.982852, -0.184397, -3.36146e-09, 0.18405, 0.980999, -0.0613795, 0.0113182, 0.060327, 0.998114, -1.84615, 0.124935, 2.77767)
+
+[node name="RockMid13" parent="Level/Platforms/Island10x5" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.485308, -0.184397, -0.854678, -0.04205, 0.971454, -0.233469, 0.873332, 0.149243, 0.4637, -2.54835, -0.00971796, 2.76851)
+
+[node name="Shrub12" parent="Level/Platforms/Island10x5" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Shrub13" parent="Level/Platforms/Island10x5" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825, -3.49811, -0.423454, -1.85267)
+
+[node name="RockSmall13" parent="Level/Platforms/Island10x5" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
+
 [node name="Island10x2" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
-transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -17.1613, 0, 27.7106)
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 14.3387, 0, 27.7106)
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x2" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -154,7 +235,98 @@ transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825
 [node name="RockSmall13" parent="Level/Platforms/Island10x2" instance=ExtResource("8_bjh80")]
 transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
 
+[node name="Island10x9" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -0.661348, 0, 27.7106)
+
+[node name="Island10x10" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -0.661348, 0, 32.2106)
+
+[node name="Island10x11" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 1.83865, 0, 30.2106)
+
+[node name="Island10x12" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 1.00532, 0, -28.1228)
+
+[node name="Island10x13" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1.00532, 0, -32.6228)
+
+[node name="Island10x14" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.49468, 0, -30.6228)
+
+[node name="Island10x7" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(-0.987719, 0, -0.156245, 0, 1, 0, 0.156245, 0, -0.987719, -13.1613, 0, 27.7106)
+
+[node name="PalmTree2" parent="Level/Platforms/Island10x7" instance=ExtResource("6_61bw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
+
+[node name="RockLarge12" parent="Level/Platforms/Island10x7" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockSmall12" parent="Level/Platforms/Island10x7" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.93347, -0.13157, -2.34524)
+
+[node name="RockMid12" parent="Level/Platforms/Island10x7" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.24711, -0.0386562, -0.968216, -0.0766022, 0.995298, -0.059288, 0.965955, 0.0888188, 0.242986, -2.81208, -0.0325789, 3.03649)
+
+[node name="Shrub12" parent="Level/Platforms/Island10x7" instance=ExtResource("10_3ikap")]
+transform = Transform3D(-0.866571, -0.0329629, -0.497964, 0.0329629, 0.991857, -0.123019, 0.497964, -0.123019, -0.858428, 0.93185, 0, 2.48236)
+
+[node name="Shrub13" parent="Level/Platforms/Island10x7" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825, -3.49811, -0.423454, -1.85267)
+
+[node name="RockSmall13" parent="Level/Platforms/Island10x7" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
+
+[node name="Island10x4" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(-0.857149, 0, -0.515068, 0, 1, 0, 0.515068, 0, -0.857149, 13.3387, 0, -27.2894)
+
+[node name="PalmTree2" parent="Level/Platforms/Island10x4" instance=ExtResource("6_61bw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
+
+[node name="RockLarge12" parent="Level/Platforms/Island10x4" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockSmall12" parent="Level/Platforms/Island10x4" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.93347, -0.13157, -2.34524)
+
+[node name="RockMid12" parent="Level/Platforms/Island10x4" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.24711, -0.0386562, -0.968216, -0.0766022, 0.995298, -0.059288, 0.965955, 0.0888188, 0.242986, -2.81208, -0.0325789, 3.03649)
+
+[node name="Shrub12" parent="Level/Platforms/Island10x4" instance=ExtResource("10_3ikap")]
+transform = Transform3D(-0.866571, -0.0329629, -0.497964, 0.0329629, 0.991857, -0.123019, 0.497964, -0.123019, -0.858428, 0.93185, 0, 2.48236)
+
+[node name="Shrub13" parent="Level/Platforms/Island10x4" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825, -3.49811, -0.423454, -1.85267)
+
+[node name="RockSmall13" parent="Level/Platforms/Island10x4" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
+
+[node name="Island10x6" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
+transform = Transform3D(0.978122, 0, -0.208031, 0, 1, 0, 0.208031, 0, 0.978122, -12.1613, 0, -27.2894)
+
+[node name="PalmTree2" parent="Level/Platforms/Island10x6" instance=ExtResource("6_61bw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
+
+[node name="RockLarge12" parent="Level/Platforms/Island10x6" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.282911, 0, -0.959146, 0.0901803, 0.99557, -0.0265997, 0.954897, -0.0940214, -0.281657, 2.37066, 0.333954, 1.44166)
+
+[node name="RockSmall12" parent="Level/Platforms/Island10x6" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.93347, -0.13157, -2.34524)
+
+[node name="RockMid12" parent="Level/Platforms/Island10x6" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(0.24711, -0.0386562, -0.968216, -0.0766022, 0.995298, -0.059288, 0.965955, 0.0888188, 0.242986, -2.81208, -0.0325789, 3.03649)
+
+[node name="Shrub12" parent="Level/Platforms/Island10x6" instance=ExtResource("10_3ikap")]
+transform = Transform3D(-0.866571, -0.0329629, -0.497964, 0.0329629, 0.991857, -0.123019, 0.497964, -0.123019, -0.858428, 0.93185, 0, 2.48236)
+
+[node name="Shrub13" parent="Level/Platforms/Island10x6" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.78067, -0.266796, 0, 0.266796, 0.78067, 0, 0, 0, 0.825, -3.49811, -0.423454, -1.85267)
+
+[node name="RockSmall13" parent="Level/Platforms/Island10x6" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, -2.41259, -0.0135411, 2.18711)
+
 [node name="Island20x" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 0, 0)
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -258,28 +430,192 @@ transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -1.94331, 
 [node name="Shrub14" parent="Level/Platforms/Island20x" instance=ExtResource("10_3ikap")]
 transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.178044, 0.867209, 0.0123849, 0.49779, -6.09345, -0.299698, -4.35316)
 
+[node name="Island20x2" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -31, 0, 0)
+
+[node name="PalmTree3" parent="Level/Platforms/Island20x2" instance=ExtResource("6_61bw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
+
+[node name="PalmTree4" parent="Level/Platforms/Island20x2" instance=ExtResource("6_61bw3")]
+transform = Transform3D(-0.255172, 0.167285, -0.952315, 0.0432965, 0.985909, 0.161585, 0.965926, 0, -0.258819, 6.96664, -1.034, 1.55542)
+
+[node name="RockLarge13" parent="Level/Platforms/Island20x2" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.968421, 0.0814249, -0.235651, 0.0901803, 0.99557, -0.0265997, 0.23244, -0.0470107, -0.971473, 6.03007, -0.0528266, 2.41741)
+
+[node name="RockLarge14" parent="Level/Platforms/Island20x2" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.968421, 0.0814249, -0.235651, 0.0901803, 0.99557, -0.0265997, 0.23244, -0.0470107, -0.971473, -6.46993, -0.0528266, 2.41741)
+
+[node name="RockLarge15" parent="Level/Platforms/Island20x2" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.630528, 0.0777476, 0.772262, 0.0901803, 0.99557, -0.0265997, -0.770909, 0.052871, -0.634747, 3.25659, -0.0528266, -6.37382)
+
+[node name="RockLarge16" parent="Level/Platforms/Island20x2" instance=ExtResource("7_q278r")]
+transform = Transform3D(0.0459946, 0.0813501, -0.995623, -0.231094, 0.970508, 0.0686219, 0.971843, 0.226927, 0.0634386, 2.27566, -0.0587352, -6.37382)
+
+[node name="RockLarge17" parent="Level/Platforms/Island20x2" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.95437, -0.21241, -0.209904, -0.231094, 0.970508, 0.0686218, 0.189137, 0.113998, -0.975311, 2.77566, -0.0587352, -6.87382)
+
+[node name="RockLarge18" parent="Level/Platforms/Island20x2" instance=ExtResource("7_q278r")]
+transform = Transform3D(-0.95437, -0.21241, -0.209904, -0.231094, 0.970508, 0.0686218, 0.189137, 0.113998, -0.975311, 2.77566, -0.0587352, -5.87382)
+
+[node name="RockSmall12" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1588, -0.16651, 0.305058)
+
+[node name="RockSmall13" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.736156, 0, -0.676812, 0, 1, 0, 0.676812, 0, 0.736156, 7.5983, -0.16651, 0.305058)
+
+[node name="RockSmall14" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.736156, 0, -0.676812, 0, 1, 0, 0.676812, 0, 0.736156, 7.29406, -0.166511, 0.698664)
+
+[node name="RockSmall15" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.736156, 0, -0.676812, 0, 1, 0, 0.676812, 0, 0.736156, 5.52473, -0.166511, 0.698664)
+
+[node name="RockSmall28" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.736156, 0, -0.676812, 0, 1, 0, 0.676812, 0, 0.736156, 4.52473, -0.166511, -5.30134)
+
+[node name="RockSmall30" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.736156, 0, -0.676812, 0, 1, 0, 0.676812, 0, 0.736156, -0.97527, 0.0723491, 2.69866)
+
+[node name="RockSmall31" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(-0.463219, 0, -0.886244, 0, 1, 0, 0.886244, 0, -0.463219, -2.47527, 0.0723491, 1.19866)
+
+[node name="RockSmall29" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.736156, 0, -0.676812, 0, 1, 0, 0.676812, 0, 0.736156, 2.52473, -0.166511, -7.80134)
+
+[node name="RockMid12" parent="Level/Platforms/Island20x2" instance=ExtResource("9_x5o1x")]
+transform = Transform3D(-0.853545, -0.0806144, 0.514746, -0.186096, 0.969959, -0.156677, -0.486652, -0.229523, -0.842905, 6.364, -0.132383, 1.04785)
+
+[node name="PalmTreeSmall2" parent="Level/Platforms/Island20x2" instance=ExtResource("13_uo227")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28858, -0.207422, 2)
+
+[node name="PalmTreeSmall3" parent="Level/Platforms/Island20x2" instance=ExtResource("13_uo227")]
+transform = Transform3D(-0.866025, 0, 0.5, -0.0959613, 0.98141, -0.16621, -0.490705, -0.191923, -0.849926, -4.28858, -0.267873, -6.29198)
+
+[node name="RockSmall16" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -3.11587, -0.00020498, -6.66856)
+
+[node name="RockSmall17" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.161894, 0.174975, 0.971171, -0.0750044, 0.983489, -0.164691, -0.983954, -0.0461796, 0.172345, -2.76949, -0.10011, -6.37876)
+
+[node name="RockSmall18" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.5, 0.224144, -0.836516, 0, 0.965926, 0.258819, 0.866026, -0.12941, 0.482963, -3.13007, -0.000204861, -6.27231)
+
+[node name="RockSmall19" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.933076, 0.12748, 0.336331, -0.0750044, 0.983489, -0.164691, -0.351773, 0.128443, 0.927232, -3.20785, -0.10011, -5.82743)
+
+[node name="RockSmall20" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(-0.965926, 0.0669873, -0.25, -7.45058e-09, 0.965926, 0.258819, 0.258819, 0.25, -0.933013, -5.22857, -0.179044, -5.75731)
+
+[node name="RockSmall21" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.0982886, -0.157061, -0.982686, -0.0750044, 0.983489, -0.164691, 0.992328, 0.089893, 0.0848854, -5.63816, -0.27895, -5.9476)
+
+[node name="RockSmall22" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(-0.242718, 0.25108, -0.937042, -1.46473e-08, 0.965926, 0.258819, 0.970097, 0.06282, -0.234447, -5.53645, -0.179044, -5.4722)
+
+[node name="RockSmall23" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.915236, 0.00232901, -0.402912, -0.0750044, 0.983489, -0.164691, 0.395876, 0.180952, 0.9003, -5.90167, -0.27895, -5.20652)
+
+[node name="RockSmall24" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(-0.242718, 0.25108, -0.937042, -1.46473e-08, 0.965926, 0.258819, 0.970097, 0.06282, -0.234447, -5.06686, -0.179044, -5.44848)
+
+[node name="RockSmall25" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.915236, 0.00232901, -0.402912, -0.0750044, 0.983489, -0.164691, 0.395876, 0.180952, 0.9003, -5.43207, -0.27895, -5.18279)
+
+[node name="RockSmall26" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(-0.242718, 0.25108, -0.937042, -1.46473e-08, 0.965926, 0.258819, 0.970097, 0.06282, -0.234447, -4.45599, -0.179044, -5.17178)
+
+[node name="RockSmall27" parent="Level/Platforms/Island20x2" instance=ExtResource("8_bjh80")]
+transform = Transform3D(0.915236, 0.00232901, -0.402912, -0.0750044, 0.983489, -0.164691, 0.395876, 0.180952, 0.9003, -6.5915, -0.27895, -5.03623)
+
+[node name="Shrub12" parent="Level/Platforms/Island20x2" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399495, -1.19209e-07, 1.81465)
+
+[node name="Shrub13" parent="Level/Platforms/Island20x2" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -1.94331, -1.19209e-07, 2.90592)
+
+[node name="Shrub14" parent="Level/Platforms/Island20x2" instance=ExtResource("10_3ikap")]
+transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.178044, 0.867209, 0.0123849, 0.49779, -6.09345, -0.299698, -4.35316)
+
 [node name="Island5x" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, 14)
 
 [node name="Shrub12" parent="Level/Platforms/Island5x" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
+
+[node name="Island5x5" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 14)
+
+[node name="Shrub12" parent="Level/Platforms/Island5x5" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
+
+[node name="Island5x3" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, 14)
+
+[node name="Shrub12" parent="Level/Platforms/Island5x3" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
+
+[node name="Island5x2" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 29.5, 0, -13.5)
+
+[node name="Shrub12" parent="Level/Platforms/Island5x2" instance=ExtResource("10_3ikap")]
+transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
+
+[node name="Island5x4" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -25.5, 0, -13.5)
+
+[node name="Shrub12" parent="Level/Platforms/Island5x4" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Items" type="Node3D" parent="Level"]
 
 [node name="ScorableItem4" parent="Level/Items" instance=ExtResource("4_qjes3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0.249787, -4)
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem4" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem5" parent="Level/Items" instance=ExtResource("4_qjes3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0.5, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6665, 0.249787, -7.22263)
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem5" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem6" parent="Level/Items" instance=ExtResource("4_qjes3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0.5, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6665, 0.249787, 6.27737)
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem6" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem8" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6665, 0.249787, 3.27737)
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem8" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem7" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.1665, 0.249787, 0.777367)
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem7" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem9" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25.9337, 0.493216, 3.64379)
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem9" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem10" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 32.6001, 0.493216, 6.86642)
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem10" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem11" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 32.6001, 0.493216, -6.63358)
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem11" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem12" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 26.6001, 0.493216, -3.63358)
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem12" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem13" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 37.1001, 0.493216, -1.13358)
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem13" instance=ExtResource("5_lxvoh")]
 
 [node name="Bubbles" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
@@ -289,17 +625,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 2.5
 
 [node name="BubbleBullet2" parent="Level/Bubbles" instance=ExtResource("2_8ln2t")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.24519e-07, 2.5, -6.5)
-
-[node name="Platform2" type="StaticBody3D" parent="Level" groups=["env"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_y207u")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Platform2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-mesh = SubResource("BoxMesh_rw6wx")
 
 [node name="FallTrigger" type="Area3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40, 0)
@@ -327,13 +652,25 @@ collision_mask = 8
 shape = SubResource("CylinderShape3D_k8d3j")
 
 [node name="Ring" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 12, 0)
 collision_mask = 13
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Ring"]
 shape = SubResource("ConcavePolygonShape3D_4kagw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ring"]
+material_override = SubResource("StandardMaterial3D_g0tna")
+mesh = SubResource("TorusMesh_0rp6f")
+skeleton = NodePath("../../Goal")
+
+[node name="Ring2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 12, 0)
+collision_mask = 13
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ring2"]
+shape = SubResource("ConcavePolygonShape3D_4kagw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ring2"]
 material_override = SubResource("StandardMaterial3D_g0tna")
 mesh = SubResource("TorusMesh_0rp6f")
 skeleton = NodePath("../../Goal")
