@@ -22,7 +22,8 @@ func _physics_process(delta):
 					print('HIT ITEM')
 					if not triggered:
 						collider.desired_motion = Vector3(0, .01, 0)
-						collider.add_child(bubble_scn.instantiate())
+						if not collider.trapped:
+							collider.add_child(bubble_scn.instantiate())
 						collider.trapped = true
 						call_deferred('queue_free')
 					triggered = true
