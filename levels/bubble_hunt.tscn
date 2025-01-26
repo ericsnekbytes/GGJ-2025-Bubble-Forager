@@ -135,6 +135,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, -2)
 [node name="FallTrigger" type="Area3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
 collision_mask = 3
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/FallTrigger"]
 shape = SubResource("BoxShape3D_73wxo")
@@ -153,6 +154,7 @@ transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 5.160
 shadow_enabled = true
 
 [node name="Items" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="ScorableItem" parent="Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 0)
@@ -186,6 +188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 0.5, 2.5)
 
 [node name="Goal" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Goal"]
 shape = SubResource("CylinderShape3D_k8d3j")
@@ -197,8 +200,6 @@ mesh = SubResource("TorusMesh_0rp6f")
 [node name="Ring" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
 collision_mask = 13
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ring"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ring"]
 visible = false

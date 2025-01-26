@@ -30,6 +30,11 @@ var jump_vector = Vector3(0, jump_strength, 0)
 	#$Camera3D/WeaponPivot/GunHairDryer.weapon_id: $Camera3D/WeaponPivot/GunHairDryer,
 	#$Camera3D/WeaponPivot/GunBubble.weapon_id: $Camera3D/WeaponPivot/GunBubble,
 #}
+# ....
+var score = 0:
+	set(value):
+		score = value
+		set_score(value)
 
 
 func _ready():
@@ -62,6 +67,10 @@ func _unhandled_input(event):
 
 				gun_bubble.start_process = true
 				gun_bubble.show()
+
+
+func set_score(value):
+	$Hud/ScoreBox/Label/ScoreValue.set_text('%d' % value)
 
 
 func _physics_process(delta):
