@@ -55,13 +55,19 @@ func _on_game_timer_timeout():
 	$EndGameBanner/BannerTimer.start()
 
 
-func _on_banner_timer_timeout():
+func end_game():
+	InputHandler.clear_tracked_players()
+	$HBoxContainer.queue_free()
 	request_scene.emit('MAIN_MENU', null)
+
+
+func _on_banner_timer_timeout():
+	end_game()
 
 
 func _input(event):
 	if event.is_action('escape'):
-		request_scene.emit('MAIN_MENU', null)
+		end_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

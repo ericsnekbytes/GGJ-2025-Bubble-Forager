@@ -22,6 +22,10 @@ func remove_player(player_id):
 		tracked_players.erase(player_id)
 
 
+func clear_tracked_players():
+	tracked_players.clear()
+
+
 func poll_for_devices():
 	var current_time = Time.get_ticks_msec()
 	if current_time - last_poll_timestamp >= poll_freq:
