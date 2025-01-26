@@ -25,6 +25,10 @@ GameData="*res://main/game_data.gd"
 window/size/viewport_width=1536
 window/size/viewport_height=864
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 player=""
