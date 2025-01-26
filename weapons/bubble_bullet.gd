@@ -12,8 +12,17 @@ var triggered = false
 var owning_player = null
 
 
+func _ready():
+	$DeathTimer.start()
+
+
 func _exit_tree():
 	owning_player = null
+
+
+func _on_death_timer_timeout():
+	if start_process:
+		call_deferred('queue_free')
 
 
 func _physics_process(delta):

@@ -1,14 +1,18 @@
 extends Node3D
 
 @onready var bullet_pivot = $BulletPivot
+@onready var players = [$HBoxContainer/SubViewportContainer/SubViewport/Player1, $HBoxContainer/SubViewportContainer2/SubViewport/Player2]
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for player in [$Player1]:
+	for pindex in range(players.size()):
+		var player = players[pindex]
 		GameData.initialize_player(player)
 		player.start_process = true
 		player.fired.connect(handle_bullet_fired)
+		player.global_position = $SpawnPoints.get_child(pindex).global_position
+
 	$GameTimer.start()
 
 
@@ -18,10 +22,11 @@ func handle_bullet_fired(bullet):
 
 func _on_fall_trigger_body_entered(body):
 	if body.is_in_group('player'):
+		var player_index = players.find(body)
 		print('AAA')
-		body.global_position = $Spawn.global_position
+		body.global_position = $SpawnPoints.get_child(player_index).global_position
 		body.velocity = Vector3.ZERO
-		body.player_cam.global_basis = $Spawn.global_basis
+		body.player_cam.global_basis = $SpawnPoints.get_child(player_index).global_basis
 
 
 func handle_item_captured():
@@ -49,5 +54,5 @@ func _on_banner_timer_timeout():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	InputHandler.poll_for_devices()
-	for player in [$Player1]:
+	for player in players:
 		player.set_time($GameTimer.time_left)

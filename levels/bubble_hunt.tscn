@@ -47,7 +47,47 @@ outer_radius = 5.0
 [node name="BubbleHunt" type="Node3D"]
 script = ExtResource("1_vowq2")
 
-[node name="Spawn" type="Node3D" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 4
+
+[node name="Player1" parent="HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_og0nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 4
+
+[node name="Player2" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("2_og0nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, 0)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Spawn" type="Node3D" parent="SpawnPoints"]
+
+[node name="Spawn2" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9081, 0, 0)
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -137,9 +177,6 @@ metadata/_edit_lock_ = true
 shape = SubResource("BoxShape3D_73wxo")
 metadata/_edit_lock_ = true
 
-[node name="Player1" parent="." instance=ExtResource("2_og0nc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-
 [node name="Env" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
@@ -150,7 +187,6 @@ transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 5.160
 shadow_enabled = true
 
 [node name="Items" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="ScorableItem" parent="Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 0)

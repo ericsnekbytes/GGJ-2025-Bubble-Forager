@@ -21,3 +21,9 @@ mesh = SubResource("SphereMesh_0abv3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 top_level = true
 shape = SubResource("SphereShape3D_64af6")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
