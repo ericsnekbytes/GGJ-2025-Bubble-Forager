@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs2asjwobllpd"]
+[gd_scene load_steps=15 format=3 uid="uid://cs2asjwobllpd"]
 
 [ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="1_6ydpk"]
 [ext_resource type="Script" path="res://main/main_menu.gd" id="1_wid5n"]
+[ext_resource type="FontFile" uid="uid://b6d2w4lj243dh" path="res://art/open_sans/static/OpenSans-Light.ttf" id="3_escpi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6b45o"]
 sky_top_color = Color(0.225905, 0.458421, 1, 1)
@@ -154,6 +155,26 @@ theme_override_fonts/font = SubResource("FontVariation_oh0ky")
 theme_override_font_sizes/font_size = 96
 text = "Bubble Forager"
 horizontal_alignment = 1
+
+[node name="ControllerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -478.5
+offset_top = -156.0
+offset_right = 478.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = ExtResource("3_escpi")
+theme_override_font_sizes/font_size = 24
+text = "Controller(s) needed!"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
