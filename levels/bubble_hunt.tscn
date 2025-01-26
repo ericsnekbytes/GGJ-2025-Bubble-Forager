@@ -84,7 +84,6 @@ render_target_update_mode = 4
 
 [node name="Player2" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("2_og0nc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.5, 0)
-visible = false
 
 [node name="SpawnPoints" type="Node3D" parent="."]
 
@@ -100,6 +99,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -32, 1
 
 [node name="Island10x" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 25.3387, 0, 22.2106)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -130,6 +130,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x8" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.281286, 0, 0.959624, 0, 1, 0, -0.959624, 0, 0.281286, -23.6613, 0, 22.2106)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x8" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -160,6 +161,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x21" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.281286, 0, 0.959624, 0, 1, 0, -0.959624, 0, 0.281286, -19.6613, 0, 68.7106)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x21" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -190,6 +192,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x3" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.0445436, 0, 0.999008, 0, 1, 0, -0.999008, 0, 0.0445436, 24.3387, 0, -21.7894)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x3" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -217,6 +220,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x5" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.228045, 0, -0.973651, 0, 1, 0, 0.973651, 0, -0.228045, -22.6613, 0, -21.7894)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x5" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -244,6 +248,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x2" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 14.3387, 0, 27.7106)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x2" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -268,42 +273,55 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x9" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -0.661348, 0, 27.7106)
+metadata/_edit_group_ = true
 
 [node name="Island10x10" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -0.661348, 0, 32.2106)
+metadata/_edit_group_ = true
 
 [node name="Island10x11" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 1.83865, 0, 30.2106)
+metadata/_edit_group_ = true
 
 [node name="Island10x15" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -0.661348, 0, 67.7106)
+metadata/_edit_group_ = true
 
 [node name="Island10x16" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -0.661348, 0, 72.2106)
+metadata/_edit_group_ = true
 
 [node name="Island10x17" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 1.83865, 0, 70.2106)
+metadata/_edit_group_ = true
 
 [node name="Island10x12" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 1.00532, 0, -28.1228)
+metadata/_edit_group_ = true
 
 [node name="Island10x13" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1.00532, 0, -32.6228)
+metadata/_edit_group_ = true
 
 [node name="Island10x14" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.49468, 0, -30.6228)
+metadata/_edit_group_ = true
 
 [node name="Island10x18" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 1.00532, 0, -68.1228)
+metadata/_edit_group_ = true
 
 [node name="Island10x19" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1.00532, 0, -72.6228)
+metadata/_edit_group_ = true
 
 [node name="Island10x20" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.49468, 0, -70.6228)
+metadata/_edit_group_ = true
 
 [node name="Island10x7" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.987719, 0, -0.156245, 0, 1, 0, 0.156245, 0, -0.987719, -13.1613, 0, 27.7106)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x7" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -328,6 +346,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x4" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.857149, 0, -0.515068, 0, 1, 0, 0.515068, 0, -0.857149, 13.3387, 0, -27.2894)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x4" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -352,6 +371,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island10x6" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.978122, 0, -0.208031, 0, 1, 0, 0.208031, 0, 0.978122, -12.1613, 0, -27.2894)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x6" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -376,6 +396,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island20x" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5, 0, 0)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -481,6 +502,7 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island20x3" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 15, 0)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x3" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -586,6 +608,7 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island20x2" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -31, 0, 0)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x2" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -691,6 +714,7 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island20x4" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -36, 0, 72)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x4" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -796,6 +820,7 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island20x5" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -36, 0, 72)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x5" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -901,24 +926,28 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island5x" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, 14)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x5" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 14)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x5" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x14" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 70)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x14" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island10x22" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.281286, 0, -0.959624, 0, 1, 0, 0.959624, 0, -0.281286, 20.1206, 0, 73.5999)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x22" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -949,6 +978,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island20x6" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 36.4593, 0, 70.3105)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x6" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -1054,6 +1084,7 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island20x7" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 36.4593, 0, 70.3105)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x7" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -1159,12 +1190,14 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island5x15" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.9593, 0, 72.3105)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x15" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island10x23" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(-0.281287, 0, -0.959624, 0, 1, 0, 0.959624, 0, -0.281287, 20.1206, 0, -67.4)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x23" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -1195,6 +1228,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island20x8" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4593, 0, -70.6895)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x8" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -1300,6 +1334,7 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island20x9" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4593, 0, -70.6895)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x9" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -1405,12 +1440,14 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island5x16" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10.9593, 0, -68.6895)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x16" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island10x24" parent="Level/Platforms" instance=ExtResource("4_tcxqa")]
 transform = Transform3D(0.281286, 0, 0.959624, 0, 1, 0, -0.959624, 0, 0.281286, -19.6613, 0, -72.2894)
+metadata/_edit_group_ = true
 
 [node name="PalmTree2" parent="Level/Platforms/Island10x24" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90149, 0, 2.34156)
@@ -1441,6 +1478,7 @@ transform = Transform3D(0.995924, -0.090198, 0, 0.090198, 0.995924, 0, 0, 0, 1, 
 
 [node name="Island20x10" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -36, 0, -69)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x10" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -1546,6 +1584,7 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island20x11" parent="Level/Platforms" instance=ExtResource("4_2cehg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -36, 0, -69)
+metadata/_edit_group_ = true
 
 [node name="PalmTree3" parent="Level/Platforms/Island20x11" instance=ExtResource("6_61bw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40149, -0.210474, 3.84156)
@@ -1651,72 +1690,84 @@ transform = Transform3D(0.49007, -0.198307, -0.848826, 0.0882028, 0.980062, -0.1
 
 [node name="Island5x17" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, -71)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x17" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x3" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 0, 14)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x3" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x2" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 29.5, 0, -13.5)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x2" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x4" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -25.5, 0, -13.5)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x4" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x6" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -19, 4, 0)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x6" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x9" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 19, 4, 0)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x9" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x7" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -15, 7, 0)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x7" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x10" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -11, 10.5, -4.5)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x10" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x11" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -11, 10.5, 4.5)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x11" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x12" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 11, 10.5, -4.5)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x12" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x13" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 11, 10.5, 4.5)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x13" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
 
 [node name="Island5x8" parent="Level/Platforms" instance=ExtResource("11_sbex2")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 14.5, 7, 0)
+metadata/_edit_group_ = true
 
 [node name="Shrub12" parent="Level/Platforms/Island5x8" instance=ExtResource("10_3ikap")]
 transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 0, -0.25703, 1.43592)
