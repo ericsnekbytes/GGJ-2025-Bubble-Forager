@@ -17,7 +17,7 @@ func load_scene(scene_id, args):
 		if get_child_count() > 0:
 			get_child(0).queue_free()
 		var new_scene = scenes[scene_id].instantiate()
-		new_scene.request_scene.connect(self.load_scene)
+		new_scene.request_scene.connect(load_scene)
 		add_child(new_scene)
 		if args != null:
 			new_scene.set_player_count(args)

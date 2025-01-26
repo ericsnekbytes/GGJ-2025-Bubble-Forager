@@ -59,6 +59,11 @@ func _on_banner_timer_timeout():
 	request_scene.emit('MAIN_MENU', null)
 
 
+func _input(event):
+	if event.is_action('escape'):
+		request_scene.emit('MAIN_MENU', null)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	InputHandler.poll_for_devices()

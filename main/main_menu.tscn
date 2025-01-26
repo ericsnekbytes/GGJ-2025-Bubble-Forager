@@ -153,5 +153,10 @@ theme_override_font_sizes/font_size = 96
 text = "Bubble Forager"
 horizontal_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SinglePlayerBtn" to="." method="_on_single_player_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TwoPlayerBtn" to="." method="_on_two_player_btn_pressed"]
