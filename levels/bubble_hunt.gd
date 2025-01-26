@@ -13,7 +13,7 @@ func _on_fall_trigger_body_entered(body):
 		print('AAA')
 		body.global_position = $Spawn.global_position
 		body.velocity = Vector3.ZERO
-		body.global_basis = $Spawn.global_basis
+		body.player_cam.global_basis = $Spawn.global_basis
 
 
 func handle_item_captured():
