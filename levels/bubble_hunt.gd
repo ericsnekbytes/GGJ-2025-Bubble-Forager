@@ -1,5 +1,7 @@
 extends Node3D
 
+signal request_scene(menu_id, args)
+
 @onready var bullet_pivot = $BulletPivot
 @onready var players = [$HBoxContainer/SubViewportContainer/SubViewport/Player1, $HBoxContainer/SubViewportContainer2/SubViewport/Player2]
 
@@ -14,6 +16,12 @@ func _ready():
 		player.global_position = $SpawnPoints.get_child(pindex).global_position
 
 	$GameTimer.start()
+
+
+func set_player_count(value):
+	if value == 1:
+		players.erase($HBoxContainer/SubViewportContainer2/SubViewport/Player2)
+		$HBoxContainer/SubViewportContainer2.queue_free()
 
 
 func handle_bullet_fired(bullet):
@@ -48,7 +56,7 @@ func _on_game_timer_timeout():
 
 
 func _on_banner_timer_timeout():
-	get_tree().quit()
+	request_scene.emit('MAIN_MENU', null)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

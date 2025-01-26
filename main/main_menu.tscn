@@ -1,0 +1,157 @@
+[gd_scene load_steps=14 format=3 uid="uid://cs2asjwobllpd"]
+
+[ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="1_6ydpk"]
+[ext_resource type="Script" path="res://main/main_menu.gd" id="1_wid5n"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6b45o"]
+sky_top_color = Color(0.225905, 0.458421, 1, 1)
+sky_horizon_color = Color(0.565141, 0.709734, 1, 1)
+
+[sub_resource type="Sky" id="Sky_fowb8"]
+sky_material = SubResource("ProceduralSkyMaterial_6b45o")
+
+[sub_resource type="Environment" id="Environment_dksm0"]
+background_mode = 2
+sky = SubResource("Sky_fowb8")
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_kjm7h"]
+size = Vector3(1000, 1000, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vt7rm"]
+albedo_color = Color(1, 0.584314, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yw3ow"]
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.4, 0.45, 1, 0.34902)
+roughness = 0.18
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vbgr2"]
+initial_velocity_min = 8.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 9.8, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0goju"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3h1wv"]
+initial_velocity_min = 9.0
+initial_velocity_max = 12.0
+gravity = Vector3(0, 9.8, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_oh0ky"]
+base_font = ExtResource("1_6ydpk")
+spacing_glyph = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1raui"]
+bg_color = Color(1, 0.584314, 0, 0.709804)
+border_width_top = 8
+border_color = Color(0.258824, 0.258824, 0.258824, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wid5n")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1536, 864)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+current = true
+
+[node name="Level" type="Node3D" parent="SubViewportContainer"]
+
+[node name="Env" type="Node3D" parent="SubViewportContainer/Level"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/Level/Env"]
+environment = SubResource("Environment_dksm0")
+
+[node name="DirectionalLight3D" type="OmniLight3D" parent="SubViewportContainer/Level/Env"]
+transform = Transform3D(1, 0, 0, 0, 0.870313, 0.4925, 0, -0.4925, 0.870313, -10.2496, 5.52362, 7.08882)
+light_energy = 24.0
+omni_range = 200.0
+
+[node name="Wall" type="MeshInstance3D" parent="SubViewportContainer/Level"]
+transform = Transform3D(1, 0, 0, 0, 0.964741, 0.2632, 0, -0.2632, 0.964741, 0, 3, -5.64897)
+mesh = SubResource("BoxMesh_kjm7h")
+surface_material_override/0 = SubResource("StandardMaterial3D_vt7rm")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="SubViewportContainer/Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -2, 0)
+material_override = SubResource("StandardMaterial3D_yw3ow")
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_vbgr2")
+draw_pass_1 = SubResource("SphereMesh_0goju")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="SubViewportContainer/Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4197, -3.71846, 0)
+material_override = SubResource("StandardMaterial3D_yw3ow")
+amount = 16
+preprocess = 0.5
+process_material = SubResource("ParticleProcessMaterial_3h1wv")
+draw_pass_1 = SubResource("SphereMesh_0goju")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SinglePlayerBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = SubResource("FontVariation_oh0ky")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1raui")
+text = "Single Player"
+
+[node name="TwoPlayerBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = SubResource("FontVariation_oh0ky")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1raui")
+text = "Two Player"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 24.0
+offset_bottom = 156.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = SubResource("FontVariation_oh0ky")
+theme_override_font_sizes/font_size = 96
+text = "Bubble Forager"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SinglePlayerBtn" to="." method="_on_single_player_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TwoPlayerBtn" to="." method="_on_two_player_btn_pressed"]
