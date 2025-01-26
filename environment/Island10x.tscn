@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfaypv1j40out"]
+
+[ext_resource type="PackedScene" uid="uid://4kbc263oj1jx" path="res://art/Island10xBottom.glb" id="1_sp4k1"]
+[ext_resource type="PackedScene" uid="uid://nfy34ogm1viq" path="res://art/Island10xTop.glb" id="2_pmymy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_liwx1"]
+points = PackedVector3Array(0.612235, -0.394826, 4.68577, -0.391517, -1.24909, -4.3894, -0.387507, -1.10916, -4.32619, -4.69506, -1.96886, 0.685465, 0.304441, -3.16061, 0.386618, 4.47072, -0.252194, -0.316061, -3.79384, -0.303987, -2.34536, 3.76816, -1.82466, 2.97781, 3.58441, -1.96262, -2.72167, -1.48511, -2.08937, 4.54562, -3.87038, -0.234128, 3.15589, -1.79257, -2.24165, -4.11439, 1.31419, -0.121517, -4.27628, 0.312486, 0.261175, 1.35805, 1.62412, 0.0434625, 4.56962, 4.33421, 0.127415, 0.251909, -4.45778, -2.35101, 0.251527, -0.651119, 0.252708, -0.159134, -4.13527, -0.386169, -2.33635, -0.373353, -3.16755, 0.38745, -0.782852, -2.07962, 4.47734, -0.237202, -3.16005, -0.154017, -1.82426, -1.68159, 4.56286, 3.90822, -1.82434, 2.68913, -4.66499, -2.10796, -0.0293044, -4.19428, -2.24275, 1.24212, -3.95369, -0.396492, -2.59828, 0.91657, -0.374768, 4.77004, -1.21757, -2.2337, -4.07028, 3.48222, -1.82472, -2.89851, 4.44218, 0.0241013, -0.312942, 1.41041, 0.252308, -0.0216831)
+
+[node name="Island10x" type="Node3D"]
+
+[node name="Island1" type="Node3D" parent="."]
+
+[node name="Island10xBottom2" parent="Island1" instance=ExtResource("1_sp4k1")]
+
+[node name="Island10xTop2" parent="Island1" instance=ExtResource("2_pmymy")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Island1/Island10xTop2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island1/Island10xTop2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_liwx1")

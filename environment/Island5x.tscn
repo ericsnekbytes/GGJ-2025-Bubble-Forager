@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnkj6hsstj3mx"]
+
+[ext_resource type="PackedScene" uid="uid://1gbay6p6mfs1" path="res://art/Island5xBottom.glb" id="1_41oar"]
+[ext_resource type="PackedScene" uid="uid://bjtd18j70uboc" path="res://art/Island5xTop.glb" id="2_i55e3"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vxqrw"]
+points = PackedVector3Array(-0.615937, -1.08483, -2.01074, -2.18525, -1.21186, 0.0107687, -1.95701, -0.343952, -1.38706, 0.722895, -0.373265, -1.92525, 1.85506, -0.942003, -1.32076, 0.00405931, -1.31776, 0.0984328, -2.06439, -0.401141, 1.46137, -0.772283, -1.17737, 2.14741, -0.0435634, 0.15021, 0.121112, 2.40452, -0.131286, 0.00684357, 1.67086, -1.02922, 1.4461, 0.577331, -0.288199, 2.44486)
+
+[node name="Island5x" type="Node3D"]
+
+[node name="Island1" type="Node3D" parent="."]
+
+[node name="Island5xBottom2" parent="Island1" instance=ExtResource("1_41oar")]
+
+[node name="Island5xTop2" parent="Island1" instance=ExtResource("2_i55e3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Island1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_vxqrw")
