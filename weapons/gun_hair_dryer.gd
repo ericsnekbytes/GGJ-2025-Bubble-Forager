@@ -5,7 +5,13 @@ var weapon_id = 'GUN_HAIR_DRYER'
 var start_process = false
 # ....
 @onready var raycast = $RayCast3D
-var firing = false
+var firing = false:
+	set(value):
+		firing = value
+		if value:
+			$FiringParticles.emitting = true
+		else:
+			$FiringParticles.emitting = false
 var reverse_firing = false
 
 

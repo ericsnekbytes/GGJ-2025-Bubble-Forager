@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal fired(bullet)
+
 var player_id = -1:
 	set(value):
 		player_id = value
@@ -40,8 +42,14 @@ var score = 0:
 func _ready():
 	# Configure guns
 	gun_bubble.start_process = true
+	gun_bubble.owning_player = self
 	gun_hair_dryer.set_raycast_orientation(player_cam)
 	gun_hair_dryer.raycast_exclude(self)
+	gun_bubble.fired.connect(handle_bullet_fired)
+
+
+func handle_bullet_fired(bullet):
+	fired.emit(bullet)
 
 
 func _unhandled_input(event):

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://baqub21a12ixs"]
+
+[ext_resource type="Script" path="res://entity/bubble_platform.gd" id="1_la6bq"]
+[ext_resource type="Material" uid="uid://bt16dbdwntu6k" path="res://art/mat_bubble.tres" id="1_spylp"]
+[ext_resource type="ArrayMesh" uid="uid://bxl7qs6qixmdu" path="res://art/bubble_platform_BubblePlatform.res" id="2_cmho2"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l5xsx"]
+points = PackedVector3Array(0.674938, 0.113313, 0.981938, -0.734039, -0.0704701, -0.978974, -0.736244, 0.0518986, -0.981916, 0.91956, 0.0825344, -0.858294, 0.712179, -0.364998, 0.652862, -0.847269, 0.293389, 0.756456, -0.753472, -0.340605, 0.753472, 0.619913, 0.375, -0.649512, 0.65283, -0.36498, -0.71233, 0.847207, 0.293367, 0.756401, -0.840414, -0.309123, -0.690346, -0.808413, 0.320285, -0.718735, 0.979342, -0.131675, 0.673154, -0.620098, 0.375, 0.649512, -0.950069, -0.101304, 0.797006, -0.981891, 0.0518974, -0.736418, -0.673154, -0.131675, 0.979342, 0.641638, 0.1434, -0.978062, -0.65283, -0.36498, -0.71233, 0.820289, -0.221848, -0.881206, 0.693991, -0.250466, 0.905157, 0.626666, 0.349148, 0.776085, -0.669726, 0.203817, 0.943834, -0.62686, 0.349152, -0.776095, 0.978062, 0.1434, -0.641829, 0.905162, -0.250468, -0.693995, -0.978062, 0.1434, 0.641829, 0.847269, 0.293389, -0.756456, -0.693999, -0.250469, -0.905166, 0.673154, -0.131675, -0.979342, 0.649512, 0.375, 0.620098, -0.97934, -0.131674, 0.673152)
+
+[node name="BubblePlatform" type="StaticBody3D"]
+script = ExtResource("1_la6bq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_spylp")
+mesh = ExtResource("2_cmho2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_l5xsx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://entity/scorable_item.gd" id="1_rrauf"]
 
 [node name="ScorableItem" type="CharacterBody3D" groups=["scorable"]]
+collision_layer = 8
 script = ExtResource("1_rrauf")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.75
 one_shot = true

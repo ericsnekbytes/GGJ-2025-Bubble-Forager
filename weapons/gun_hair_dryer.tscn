@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://c21xryfqr8owu"]
+[gd_scene load_steps=7 format=3 uid="uid://c21xryfqr8owu"]
 
 [ext_resource type="Script" path="res://weapons/gun_hair_dryer.gd" id="1_h7sno"]
 [ext_resource type="PackedScene" uid="uid://rg5aclcl6dpo" path="res://art/hair_dryer.glb" id="2_delt2"]
+[ext_resource type="Texture2D" uid="uid://c0jeblkf6s5xt" path="res://art/dot.png" id="3_hqxfg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqnin"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.247059)
+albedo_texture = ExtResource("3_hqxfg")
+disable_receive_shadows = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8del2"]
+spread = 16.807
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+gravity = Vector3(4, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_haxi1"]
+size = Vector2(0.04, 0.04)
 
 [node name="GunHairDryer" type="Node3D"]
 script = ExtResource("1_h7sno")
@@ -11,3 +29,14 @@ script = ExtResource("1_h7sno")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 visible = false
 target_position = Vector3(0, -1000, 0)
+collision_mask = 8
+
+[node name="FiringParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24527, 0, 0)
+material_override = SubResource("StandardMaterial3D_kqnin")
+emitting = false
+amount = 16
+lifetime = 0.5
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_8del2")
+draw_pass_1 = SubResource("QuadMesh_haxi1")

@@ -8,6 +8,12 @@ var MAX_SPEED = 10
 # ....
 var bubble_scn = preload("res://weapons/bubble_bullet.tscn")
 var triggered = false
+# ...
+var owning_player = null
+
+
+func _exit_tree():
+	owning_player = null
 
 
 func _physics_process(delta):
@@ -21,7 +27,8 @@ func _physics_process(delta):
 				if collider.is_in_group('scorable'):
 					print('HIT ITEM')
 					if not triggered:
-						collider.desired_motion = Vector3(0, .01, 0)
+						collider.owning_player = owning_player
+						collider.desired_motion = Vector3(0, .1, 0)
 						if not collider.trapped:
 							collider.add_child(bubble_scn.instantiate())
 						collider.trapped = true

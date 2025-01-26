@@ -1,11 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://po8pak3b3ajt"]
 
 [ext_resource type="Script" path="res://weapons/bubble_bullet.gd" id="1_v46ht"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6qv8"]
-transparency = 1
-albedo_color = Color(0.611765, 0.643137, 1, 0.427451)
-roughness = 0.18
+[ext_resource type="Material" uid="uid://bt16dbdwntu6k" path="res://art/mat_bubble.tres" id="2_7rysr"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_0abv3"]
 radius = 1.0
@@ -15,11 +11,11 @@ height = 2.0
 
 [node name="BubbleBullet" type="CharacterBody3D"]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_v46ht")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_n6qv8")
+material_override = ExtResource("2_7rysr")
 mesh = SubResource("SphereMesh_0abv3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
