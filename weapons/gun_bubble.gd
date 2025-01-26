@@ -39,7 +39,7 @@ func _input(event):
 				#print('Shoot')
 				var bullet = bullet_plat_scn.instantiate()
 				fired.emit(bullet)
-				bullet.global_position = pcam.global_position + pcam.global_basis.z.rotated(pcam.global_basis.y.normalized(), PI) * 3
+				bullet.global_position = pcam.global_position + pcam.global_basis.z.rotated(pcam.global_basis.y.normalized(), PI) * 3.5
 
 
 func _on_death_timer_timeout():

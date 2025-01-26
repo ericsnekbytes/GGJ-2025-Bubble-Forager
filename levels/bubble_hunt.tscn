@@ -722,51 +722,85 @@ transform = Transform3D(1, 0, 0, 0, 0.993729, -0.111816, 0, 0.111816, 0.993729, 
 
 [node name="ScorableItem4" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0.249787, -4)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem4" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem5" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6665, 0.249787, -7.22263)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem5" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem6" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6665, 0.249787, 6.27737)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem6" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem8" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6665, 0.249787, 3.27737)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem8" instance=ExtResource("5_lxvoh")]
 
+[node name="ScorableItem14" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1665, 0.249787, 21.2774)
+metadata/_edit_group_ = true
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem14" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem15" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6665, 0.249787, 23.2774)
+metadata/_edit_group_ = true
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem15" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem16" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3335, 0.456966, -20.2226)
+metadata/_edit_group_ = true
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem16" instance=ExtResource("5_lxvoh")]
+
+[node name="ScorableItem17" parent="Level/Items" instance=ExtResource("4_qjes3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8335, 0.749787, -21.7226)
+metadata/_edit_group_ = true
+
+[node name="EntPyramid" parent="Level/Items/ScorableItem17" instance=ExtResource("5_lxvoh")]
+
 [node name="ScorableItem7" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.1665, 0.249787, 0.777367)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem7" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem9" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25.9337, 0.493216, 3.64379)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem9" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem10" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 32.6001, 0.493216, 6.86642)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem10" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem11" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 32.6001, 0.493216, -6.63358)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem11" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem12" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 26.6001, 0.493216, -3.63358)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem12" instance=ExtResource("5_lxvoh")]
 
 [node name="ScorableItem13" parent="Level/Items" instance=ExtResource("4_qjes3")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 37.1001, 0.493216, -1.13358)
+metadata/_edit_group_ = true
 
 [node name="EntPyramid" parent="Level/Items/ScorableItem13" instance=ExtResource("5_lxvoh")]
 
