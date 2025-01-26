@@ -9,6 +9,7 @@ func _ready():
 		GameData.initialize_player(player)
 		player.start_process = true
 		player.fired.connect(handle_bullet_fired)
+	$GameTimer.start()
 
 
 func handle_bullet_fired(bullet):
@@ -36,6 +37,17 @@ func _on_goal_body_entered(body):
 			body.call_deferred('queue_free')
 
 
+func _on_game_timer_timeout():
+	$EndGameBanner.show()
+	$EndGameBanner/BannerTimer.start()
+
+
+func _on_banner_timer_timeout():
+	get_tree().quit()
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	InputHandler.poll_for_devices()
+	for player in [$Player1]:
+		player.set_time($GameTimer.time_left)

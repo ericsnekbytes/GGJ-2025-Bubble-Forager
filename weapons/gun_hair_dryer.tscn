@@ -8,12 +8,12 @@
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.247059)
+albedo_color = Color(1, 1, 1, 0.698039)
 albedo_texture = ExtResource("3_hqxfg")
 disable_receive_shadows = true
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8del2"]
-spread = 16.807
+spread = 12.397
 initial_velocity_min = 4.0
 initial_velocity_max = 8.0
 gravity = Vector3(4, 0, 0)
@@ -32,11 +32,10 @@ target_position = Vector3(0, -1000, 0)
 collision_mask = 8
 
 [node name="FiringParticles" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24527, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192898, 0, 0)
 material_override = SubResource("StandardMaterial3D_kqnin")
-emitting = false
 amount = 16
-lifetime = 0.5
+lifetime = 0.2
 transform_align = 3
 process_material = SubResource("ParticleProcessMaterial_8del2")
 draw_pass_1 = SubResource("QuadMesh_haxi1")

@@ -97,3 +97,37 @@ offset_bottom = 58.0
 theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
 theme_override_font_sizes/font_size = 24
 text = "0"
+
+[node name="TimeLabel" type="Label" parent="Hud"]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 110.0
+offset_right = 110.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0.257813, 0.257813, 0.257813, 1)
+theme_override_fonts/font = SubResource("FontVariation_oh0ky")
+theme_override_font_sizes/font_size = 24
+text = "TIME"
+
+[node name="TimeValue" type="Label" parent="Hud/TimeLabel"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 42.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="ScoreBox2" type="ColorRect" parent="Hud"]
+visible = false
+layout_mode = 0
+offset_top = 120.0
+offset_right = 210.0
+offset_bottom = 191.0
+color = Color(1, 0.583333, 0, 0.709804)
+
+[node name="TopLine" type="ColorRect" parent="Hud/ScoreBox2"]
+layout_mode = 0
+offset_right = 210.0
+offset_bottom = 8.0
+color = Color(0.258824, 0.258824, 0.258824, 1)

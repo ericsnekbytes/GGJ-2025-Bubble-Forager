@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0c3nbgdrs6ny"]
+[gd_scene load_steps=18 format=3 uid="uid://d0c3nbgdrs6ny"]
 
 [ext_resource type="Script" path="res://levels/bubble_hunt.gd" id="1_vowq2"]
 [ext_resource type="PackedScene" uid="uid://po8pak3b3ajt" path="res://weapons/bubble_bullet.tscn" id="2_8ln2t"]
 [ext_resource type="PackedScene" uid="uid://dx4xntt240r4h" path="res://player/player.tscn" id="2_og0nc"]
 [ext_resource type="PackedScene" uid="uid://bg38cvtfcec88" path="res://entity/scorable_item.tscn" id="4_qjes3"]
 [ext_resource type="PackedScene" uid="uid://bncw6pdrxy5px" path="res://entity/ent_pyramid.tscn" id="5_lxvoh"]
+[ext_resource type="FontFile" uid="uid://c2f72s2s2idlj" path="res://art/open_sans/static/OpenSans-ExtraBold.ttf" id="6_xalpw"]
+[ext_resource type="FontFile" uid="uid://cv7bjb3rqy7ka" path="res://art/open_sans/static/OpenSans-Medium.ttf" id="7_q1pmy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y207u"]
 size = Vector3(10, 1, 10)
@@ -127,7 +129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, 1.90739e-07)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, -2)
 
 [node name="FallTrigger" type="Area3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40, 0)
 collision_mask = 3
 metadata/_edit_lock_ = true
 
@@ -201,5 +203,70 @@ skeleton = NodePath("../../Goal")
 
 [node name="BulletPivot" type="Node3D" parent="."]
 
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[node name="EndGameBanner" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.584314, 0, 0.709804)
+
+[node name="GameOverLabel" type="Label" parent="EndGameBanner"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.0
+offset_top = 16.0
+offset_right = 87.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = ExtResource("6_xalpw")
+theme_override_font_sizes/font_size = 24
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerWinLabel" type="Label" parent="EndGameBanner/GameOverLabel"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.0
+offset_top = 30.0
+offset_right = 87.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.258824, 0.258824, 0.258824, 1)
+theme_override_fonts/font = ExtResource("7_q1pmy")
+theme_override_font_sizes/font_size = 24
+text = "Player X wins!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BannerTimer" type="Timer" parent="EndGameBanner"]
+wait_time = 10.0
+
+[node name="ColorRect" type="ColorRect" parent="EndGameBanner"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 8.0
+color = Color(0.258824, 0.258824, 0.258824, 1)
+
 [connection signal="body_entered" from="Level/FallTrigger" to="." method="_on_fall_trigger_body_entered"]
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="EndGameBanner/BannerTimer" to="." method="_on_banner_timer_timeout"]

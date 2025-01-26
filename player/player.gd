@@ -81,6 +81,10 @@ func set_score(value):
 	$Hud/ScoreBox/Label/ScoreValue.set_text('%d' % value)
 
 
+func set_time(value):
+	$Hud/TimeLabel/TimeValue.set_text('%d' % value)
+
+
 func _physics_process(delta):
 	if start_process:
 		var start_velocity = velocity

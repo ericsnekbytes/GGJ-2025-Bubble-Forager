@@ -28,7 +28,7 @@ func _physics_process(delta):
 					print('HIT ITEM')
 					if not triggered:
 						collider.owning_player = owning_player
-						collider.desired_motion = Vector3(0, .1, 0)
+						collider.desired_motion = Vector3(0, .12, 0)
 						if not collider.trapped:
 							collider.add_child(bubble_scn.instantiate())
 						collider.trapped = true
