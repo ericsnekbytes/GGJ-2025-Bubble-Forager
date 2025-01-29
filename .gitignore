@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+promo/
+notes_jam_2025.txt
+*.blend1
+*.blend2
+*.blend3
+*.blend4
+.gitattributes
+*.tmp
+.godot/
+/android/
