@@ -126,8 +126,11 @@ func _physics_process(delta):
 		# Add gravity vector
 		var gravity_vec = GRAVITY_BASE
 
+		# Do rotations, check for and clamp overrotations
 		player_cam.transform = player_cam.transform.orthonormalized()
-		player_cam.rotate(player_cam.basis.x, look_pitch * delta)
+		var planned_pitch = player_cam.transform.rotated(player_cam.basis.x, look_pitch * delta)
+		if planned_pitch.basis.y.y > sin(PI / 90.0): # planned_pitch.basis.z.y <= 0 and 
+			player_cam.rotate(player_cam.basis.x, look_pitch * delta)
 		player_cam.rotate(Vector3(0, 1, 0), look_spin * delta)
 
 		# Add inertia
